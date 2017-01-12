@@ -1,9 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Pizza Sisters!</title>
 </head>
 <body>
+<form name="pizza sisters" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Enter full name:</label>
+      <input type="text" name="fullname">
+    </div>
+
+    <div>
+      <label>Enter your email:</label>
+      <input type="email" name="email">
+    </div>
+
+    <div>
+      <label>Enter your telephone number:</label>
+      <input type="tel" name="telephone_number">
+    </div>
+
+  </fieldset>
+
+  <fieldset>
+    <div>
+      <label>Type of crust:</label>
+      <select name="crust_type">
+        <option value="crust">Thin Crust</option>
+        <option value="crust">Stuffed Crust</option>
+        <option value="crust">Deep Dish</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Toppings:</label>
+      <select name="pizza_toppings">
+        <option value="toppings">Supreme/Combination</option>
+        <option value="toppings">Pepperoni</option>
+        <option value="toppings">Vegetarian</option>
+        <option value="toppings">Cheese</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Size:</label>
+      <select name="pizza_size">
+        <option value="size">Small</option>
+        <option value="size">Medium</option>
+        <option value="size">Large</option>
+        <option value="size">Extra Large</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div>    
+      <label>Choose a date:</label>
+      <input type="date" name="date">
+    </div>
+  </fieldset>
+
+  <p>
+  <textarea name="textarea"
+   rows="10" cols="50">Enter your delivery address:</textarea>
+  </p>
+  <button type="submit">Save this adventure</button>
+</form>
 
 </body>
 </html>
