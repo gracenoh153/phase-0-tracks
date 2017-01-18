@@ -14,3 +14,8 @@
 .accomplishment {
   font-size: .8em;
 }
+
+p::first-letter { 
+    font-size: 200%;
+    color: #5b4e2e;
+}
