@@ -62,10 +62,12 @@ figcaption {
     font-size: 1.2em; 
   }
   #center-page {
-    border: solid red;
     display: block;
     width: 70%;
     margin: 0 auto;
+  }
+  main {
+    width: 95%;
   }
 }
 
