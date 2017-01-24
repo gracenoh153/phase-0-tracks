@@ -1,25 +1,44 @@
-** Directions for the robot to get to 10th floor of a building **
+**Directions for the robot to get to 10th floor of a building**
 
 1. approach elevator
-2. search signs near elevator to find out what floor you are on
-3. locate up or down buttons near elevator
+2. scan signs near elevator to find out current floor
+3. assign current floor you are on to variable "x" 
+4. locate up or down buttons near elevator
 
-4. if current floor > 10,
-    + press down button
-5. else
-    + press up button
+5. if x > 10,
+    * press down button
+6. else
+    * press up button
     
-6. when elevator door opens, enter elevator
-7. face elevator buttons
-8. locate button with the number "10"
-9. press and release the button
-10. when elevator doors open, scan the floor level elevator is currently at
+7. when elevator door opens, enter elevator
+8. face elevator buttons
+9. locate button with the number "10"
+10. press and release the button
+11. when elevator doors open, scan the floor level elevator is currently at
+12. assign floor of elevator to variable "y"
 
-11. if current floor of elevator does not equal 10,
-     + stay on elevator
-12. else
-     + exit elevator
+12. if y does not equal 10,
+     * stay on elevator
+13. else
+     * exit elevator (you are now on level 10)
+
+---------------------------------------------------------------------------
+
+**Directions for going outside the home**
+
+1. check temperature (in Farenheit) outside by using weather app on phone
+   * assign temperature value to variable "x"
+
+2. if x < 50
+   * wear boots, long pants, sweater, and winter coat
+   elsif 50 < x < 70
+   * wear sneakers, long pants, long sleeves, and light jacket
+   elsif 70 < x < 80
+   * wear sneakers, long pants, and short sleeves
+   else
+   * wear flip flops, shorts, and short sleeves
 
 
-Directions for making a peanut butter and jelly sandwich:
-- 
+
+
+
