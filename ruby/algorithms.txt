@@ -38,6 +38,14 @@
    else
    * wear flip flops, shorts, and short sleeves
 
+3. grab keys to home
+4. approach main door of home
+5. unlock the door locks
+6. open door
+7. exit home
+8. lock door 
+9. walk towards sidewalk (you are now ready for your outdoor activity)
+
 
 
 
