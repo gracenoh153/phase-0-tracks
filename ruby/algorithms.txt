@@ -1,0 +1,25 @@
+** Directions for the robot to get to 10th floor of a building **
+
+1. approach elevator
+2. search signs near elevator to find out what floor you are on
+3. locate up or down buttons near elevator
+
+4. if current floor > 10,
+    + press down button
+5. else
+    + press up button
+    
+6. when elevator door opens, enter elevator
+7. face elevator buttons
+8. locate button with the number "10"
+9. press and release the button
+10. when elevator doors open, scan the floor level elevator is currently at
+
+11. if current floor of elevator does not equal 10,
+     + stay on elevator
+12. else
+     + exit elevator
+
+
+Directions for making a peanut butter and jelly sandwich:
+- 
