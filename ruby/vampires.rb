@@ -12,17 +12,17 @@ insurance = gets.chomp
 current_year = 2017
 age = current_year - birth_year
 
-if user_age == age && (garlic_bread == "y" || insurance == "y")
-  puts "Probably not a vampire."
-=begin
-elsif (age != (current_year - birth_year)) && ((garlic_bread == "n") || (insurance == "n"))
-  puts "Probably a vampire."
-elsif (age != (current_year - birth_year)) && ((garlic_bread == "n") && (insurance == "n"))
-  puts "Almost certainly a vampire"
-elsif (user_name == "Drake Cula") || (user_name == "Tu Fang")
-  puts "Definitely a vampire."
-else
-  puts "Results inconclusive."
-=end
-
+while true 
+  if (user_age == age) && ((garlic_bread == "y") || (insurance == "y"))
+    puts "Probably not a vampire."
+  elsif (age != (current_year - birth_year)) && ((garlic_bread == "n") || (insurance == "n"))
+    puts "Probably a vampire."
+  elsif (age != (current_year - birth_year)) && (garlic_bread == "n") && (insurance == "n")
+    puts "Almost certainly a vampire"
+  elsif (user_name == "Drake Cula") || (user_name == "Tu Fang")
+    puts "Definitely a vampire."
+  else
+    puts "Results inconclusive."
+  end 
+break
 end 
