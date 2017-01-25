@@ -18,7 +18,7 @@ while true
   elsif (age != (current_year - birth_year)) && ((garlic_bread == "n") || (insurance == "n"))
     puts "Probably a vampire."
   elsif (age != (current_year - birth_year)) && (garlic_bread == "n") && (insurance == "n")
-    puts "Almost certainly a vampire"
+    puts "Almost certainly a vampire."
   elsif (user_name == "Drake Cula") || (user_name == "Tu Fang")
     puts "Definitely a vampire."
   else
