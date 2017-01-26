@@ -6,17 +6,28 @@
 
 # index the word and then apply .next to every indexed character
 
+# add conditional logic for edge case when string includes "z"
+# when encrypted string contains "z" convert output to "a"
 
 def encrypt(string1)
   index = 0
   while index < string1.length
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    if string1[index] == "z"
+      p "found it"
+      p encrypt_edge = (alpha.index(string1[index]))
+      p alpha[0]
+      p alpha[-1]
+    end 
     string1[index] = string1[index].next
     index += 1
   end
+
   puts string1
 end
 
-encrypt("password")
+encrypt("abc")
+encrypt("zed")
 
 
 # Decryption
@@ -33,8 +44,14 @@ def decrypt(string2)
     decrypt_letter = alpha[(alpha.index(string2[index]) - 1)]
     string2[index] = decrypt_letter
     index += 1
+    if string2[index] == "a"
+      string2[index] = "z"
+    end  
   end
   puts string2
 end
 
-decrypt("pssword")
+decrypt("bcd")
+decrypt("afe")
+
+
