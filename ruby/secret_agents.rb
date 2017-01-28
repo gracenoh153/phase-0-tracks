@@ -24,10 +24,9 @@ def encrypt(str1)
 p str1
 end 
 
-encrypt ("zed")
-encrypt ("zzd")
-encrypt ("abc")
-
+# call method to test results 
+# encrypt ("abc") # should return "bcd"
+# encrypt ("zed") # should return "afe"
 
 # create a decryption program that reverses above encryption program
 # define a method called "decrypt"
@@ -57,8 +56,9 @@ def decrypt(str2)
 p str2
 end 
 
-# decrypt ("bcd")
-# decrypt ("afe")
+# call method to test results 
+# decrypt ("bcd") # should return "abc"
+# decrypt ("afe") # should return "zed"
 
 # upgrade program to ask user if they want to encrypt or decrypt a password
 # ask user for password
