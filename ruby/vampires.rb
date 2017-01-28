@@ -59,8 +59,10 @@ until employee_count == num_employees
   else
     puts "Results inconclusive."
   end 
-
+  # increase employee count by one, until it equals the number of employees you want to process
   employee_count += 1
 end 
+
+# plot twist...
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
