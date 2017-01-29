@@ -16,7 +16,7 @@ until employee_count == num_employees
   puts "What year were you born?"
   birth_year = gets.chomp.to_i
 
-  puts "Our company makes amazing garlic bread. Would you like some? (y/n)"
+  puts "Our cafeteria has amazing garlic bread. Would you like some? (y/n)"
   garlic_bread = gets.chomp
     until (garlic_bread.downcase == "y") || (garlic_bread.downcase == "n")
       puts "Please enter \'y\' or \'n\'."
@@ -50,15 +50,16 @@ until employee_count == num_employees
     puts "Definitely a vampire."
   elsif allergies.downcase == "sunshine"
     puts "Probably a vampire."
-  elsif (user_actual_age != user_age) && (garlic_bread == "n" && insurance == "n")
+  elsif (user_actual_age != user_age || (user_actual_age - 1)  != user_age) && (garlic_bread == "n" && insurance == "n")
     puts "Almost certainly a vampire."
-  elsif (user_actual_age != user_age) && (garlic_bread == "n" || insurance == "n")
+  elsif (user_actual_age != user_age || (user_actual_age - 1) != user_age) && (garlic_bread == "n" || insurance == "n")
     puts "Probably a vampire."
-  elsif (user_actual_age == user_age) && (garlic_bread == "y" || insurance == "y")
+  elsif (user_actual_age == user_age || (user_actual_age - 1) == user_age) && (garlic_bread == "y" || insurance == "y")
     puts "Probably not a vampire."
   else
     puts "Results inconclusive."
   end 
+
   # increase employee count by one, until it equals the number of employees you want to process
   employee_count += 1
 end 
