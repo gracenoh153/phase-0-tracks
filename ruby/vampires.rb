@@ -16,7 +16,7 @@ until employee_count == num_employees
   puts "What year were you born?"
   birth_year = gets.chomp.to_i
 
-  puts "Our company makes amazing garlic bread. Would you like some? (y/n)"
+  puts "Our cafeteria has amazing garlic bread. Would you like some? (y/n)"
   garlic_bread = gets.chomp
     until (garlic_bread.downcase == "y") || (garlic_bread.downcase == "n")
       puts "Please enter \'y\' or \'n\'."
@@ -59,6 +59,7 @@ until employee_count == num_employees
   else
     puts "Results inconclusive."
   end 
+
   # increase employee count by one, until it equals the number of employees you want to process
   employee_count += 1
 end 
