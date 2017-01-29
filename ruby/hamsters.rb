@@ -1,4 +1,4 @@
-puts "What's the hamster's name?"
+puts "What's the hamster's name? If it has no name, name the hamster."
 hamster_name = gets.chomp
 
 puts "How noisy is the hamster from a scale of 1-10?"
@@ -11,10 +11,10 @@ volume = gets.chomp.to_i
 puts "What is the fur color?"
 fur_color = gets.chomp
 
-puts "Is the hamster a good candidate for adoption? y/n"
+puts "Is the hamster a good candidate for adoption? yes/no"
 adoption = gets.chomp
-  until (adoption.downcase == "y") || (adoption.downcase == "n")
-    puts "Invalid answer. Please enter \'y\' or \'n\'."
+  until (adoption.downcase == "yes") || (adoption.downcase == "no")
+    puts "Invalid answer. Please enter \'yes\' or \'no\'."
     adoption = gets.chomp
   end 
 
