@@ -50,11 +50,11 @@ until employee_count == num_employees
     puts "Definitely a vampire."
   elsif allergies.downcase == "sunshine"
     puts "Probably a vampire."
-  elsif (user_actual_age != user_age) && (garlic_bread == "n" && insurance == "n")
+  elsif (user_actual_age != user_age || (user_actual_age - 1)  != user_age) && (garlic_bread == "n" && insurance == "n")
     puts "Almost certainly a vampire."
-  elsif (user_actual_age != user_age) && (garlic_bread == "n" || insurance == "n")
+  elsif (user_actual_age != user_age || (user_actual_age - 1) != user_age) && (garlic_bread == "n" || insurance == "n")
     puts "Probably a vampire."
-  elsif (user_actual_age == user_age) && (garlic_bread == "y" || insurance == "y")
+  elsif (user_actual_age == user_age || (user_actual_age - 1) == user_age) && (garlic_bread == "y" || insurance == "y")
     puts "Probably not a vampire."
   else
     puts "Results inconclusive."
