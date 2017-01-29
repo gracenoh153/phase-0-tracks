@@ -21,12 +21,12 @@ def encrypt(str1)
     index += 1  
     end 
   end 
-p str1
+  str1
 end 
 
 # call method to test results 
-# encrypt ("abc") # should return "bcd"
-# encrypt ("zed") # should return "afe"
+# puts encrypt ("abc") # should return "bcd"
+# puts encrypt ("zed") # should return "afe"
 
 # create a decryption program that reverses above encryption program
 # define a method called "decrypt"
@@ -53,12 +53,12 @@ def decrypt(str2)
     index += 1  
     end 
   end 
-p str2
+  str2
 end 
 
 # call method to test results 
-# decrypt ("bcd") # should return "abc"
-# decrypt ("afe") # should return "zed"
+# puts decrypt ("bcd") # should return "abc"
+# puts decrypt ("afe") # should return "zed"
 
 # upgrade program to ask user if they want to encrypt or decrypt a password
 # ask user for password
@@ -77,10 +77,10 @@ puts "What is the password?"
 password = gets.chomp
 # if choice is to encrypt, call "encrypt" method on user password
   if user_choice == "encrypt"
-    encrypt(password)
+    puts encrypt(password)
 # if choice is to dectypt, call "decrypt" method on user password
   else 
-    decrypt(password)
+    puts decrypt(password)
   end 
 
 # nested method call test; will output "txpsegjti" then change back to "swordfish"
