@@ -64,6 +64,6 @@ until employee_count == num_employees
   employee_count += 1
 end 
 
-# plot twist... 
+# plot twist...
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
