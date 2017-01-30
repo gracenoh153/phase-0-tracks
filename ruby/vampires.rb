@@ -19,14 +19,14 @@ until employee_count == num_employees
   puts "Our cafeteria has amazing garlic bread. Would you like some? (y/n)"
   garlic_bread = gets.chomp
     until (garlic_bread.downcase == "y") || (garlic_bread.downcase == "n")
-      puts "Please enter \'y\' or \'n\'."
+      puts "Please enter 'y' or 'n'."
       garlic_bread = gets.chomp
     end
 
   puts "Would you like to enroll in our company's health insurance? (y/n)"
   insurance = gets.chomp
     until (insurance.downcase == "y") || (insurance.downcase == "n")
-      puts "Please enter \'y\' or \'n\'."
+      puts "Please enter 'y' or 'n'."
       insurance = gets.chomp
     end
 
