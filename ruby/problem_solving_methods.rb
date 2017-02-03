@@ -35,9 +35,9 @@ p search_array(array, 20)
 - Return newly expanded array.
 =end 
 
-def fib(num)
+def fib(number)
   fib_num = [0, 1]
-    while fib_num.length < num
+    while fib_num.length < number 
       fib_num << (fib_num[-2] + fib_num[-1])
     end
   return fib_num 
@@ -81,3 +81,5 @@ def bubble_sort(array)
 end
 
 p bubble_sort(array)
+
+# paired with Natalie Yip
