@@ -23,6 +23,8 @@ p search_array(array, 2)
 p search_array(array, 31)
 p search_array(array, 20)
 
+
+
 =begin 
 ***** release 1 *****
 - Create a method that will output the Fibonacci sequence.
