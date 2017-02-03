@@ -18,6 +18,7 @@ p search_array(array, 2)
 p search_array(array, 31)
 p search_array(array, 20)
 
+=end 
 
 
 def fib(num)
@@ -30,7 +31,6 @@ end
 
 p fib(6)
 p fib(100)
-=end 
 
 
 
