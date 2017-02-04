@@ -29,3 +29,7 @@ puts "How many floors does their home have?"
 designer_client_info[:client_floors] = gets.chomp.to_i
 
 p designer_client_info
+
+puts "Would you like to make any changes to the client information?"
+puts "If changes are needed, type 'yes'. If no changes are needed, type 'none'."
+make_changes = gets.chomp
