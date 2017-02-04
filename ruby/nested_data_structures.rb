@@ -56,3 +56,7 @@ puts "Famous painting at Musee d'Orsay: #{Paris_touristy_spots[:musee_dorsay][:p
 puts "Famous artist at Musee d'Orsay: #{Paris_touristy_spots[:musee_dorsay][:artists][0]}"
 puts "Famous chapel: #{Paris_touristy_spots[:cathedrals][0]}"
 puts "Famous landmark: #{Paris_touristy_spots[:famous_landmarks][2]}"
+puts "These are some of the artists at the Musee du Louvre: #{Paris_touristy_spots[:musee_du_Louvre][:artists]}"
+puts "Add an artist to the list: #{Paris_touristy_spots[:musee_du_Louvre][:artists] << "Rembrandt"}"
+
+
