@@ -30,6 +30,16 @@ designer_client_info[:client_floors] = gets.chomp.to_i
 
 p designer_client_info
 
-puts "Would you like to make any changes to the client information?"
+puts "Do any of the categories need to be changed/updated?"
 puts "If changes are needed, type 'yes'. If no changes are needed, type 'none'."
 make_changes = gets.chomp
+
+if make_changes.downcase == "yes"
+  puts "Enter the key (e.g. 'client_theme') you would like to change."
+  key_change = gets.chomp
+  puts "What would you like to change the value to?"
+  new_value = gets.chomp
+  designer_client_info[key_change.to_sym] = new_value
+end 
+
+p designer_client_info
