@@ -2,19 +2,18 @@
 
 Paris_touristy_spots = {
   musee_du_Louvre: {
-    paintings: [
-      "Mona Lisa", 
-      "The Lacemaker", 
-      "The Raft of the Medusa"
-      ],
-    sculptures: [
-      "Venus de Milo", 
-      "Diana of Versailles", 
-      "The Marly Horses"
-      ],
-    artists: [
-      "Leonardo da Vinci", 
-      "Johannes Vermeer", 
-      "Antonio Canova"
-      ],
-    } 
+    paintings: {
+      Leonardo_da_Vinci: "Mona Lisa", 
+      Johannes_Vermeer: "The Lacemaker", 
+      Theodore_Gericault: "The Raft of the Medusa"
+    },
+    sculptures: ["Venus de Milo", "Diana of Versailles", "The Marly Horses"],
+    artists: ["Caravaggio", "Eugene Delacroix", "Antonio Canova"],
+  } 
+  musee_dOrsay: {
+    paintings: ["Olympia", "Van Gogh Self Portrait", "Poppies", "The Source"],
+    artists: ["Edouard Manet", "Claude Monet", "Vincent Van Gogh", "Jean-Auguste-Dominique Ingres"],
+  }
+  cathedrals: ["Notre Dame Cathedral", "Sacre-Coeur", "Sainte-Chapelle", "La Madeleine"],
+  famous_landmarks: ["Eiffel Tower", "Luxembourg Gardens", "River Seine", "Arc de Triomphe", "Champ Elysees"]
+}
