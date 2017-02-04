@@ -7,13 +7,45 @@ Paris_touristy_spots = {
       Johannes_Vermeer: "The Lacemaker", 
       Theodore_Gericault: "The Raft of the Medusa"
     },
-    sculptures: ["Venus de Milo", "Diana of Versailles", "The Marly Horses"],
-    artists: ["Caravaggio", "Eugene Delacroix", "Antonio Canova"],
-  } 
-  musee_dOrsay: {
-    paintings: ["Olympia", "Van Gogh Self Portrait", "Poppies", "The Source"],
-    artists: ["Edouard Manet", "Claude Monet", "Vincent Van Gogh", "Jean-Auguste-Dominique Ingres"],
-  }
-  cathedrals: ["Notre Dame Cathedral", "Sacre-Coeur", "Sainte-Chapelle", "La Madeleine"],
-  famous_landmarks: ["Eiffel Tower", "Luxembourg Gardens", "River Seine", "Arc de Triomphe", "Champ Elysees"]
+    sculptures: [
+      "Venus de Milo", 
+      "Diana of Versailles", 
+      "The Marly Horses"
+    ],
+    artists: [
+      "Caravaggio", 
+      "Eugene Delacroix", 
+      "Antonio Canova"
+    ],
+  },
+  musee_dorsay: {
+    paintings: [
+      "Olympia", 
+      "Van Gogh Self Portrait", 
+      "Poppies", 
+      "The Source"
+    ],
+    artists: [
+      "Edouard Manet", 
+      "Claude Monet", 
+      "Vincent Van Gogh", 
+      "Jean-Auguste-Dominique Ingres"
+    ],
+  },
+  cathedrals: [
+    "Notre Dame Cathedral", 
+    "Sacre-Coeur", 
+    "Sainte-Chapelle", 
+    "La Madeleine"
+    ],
+  famous_landmarks: [
+    "Eiffel Tower", 
+    "Luxembourg Gardens", 
+    "Arc de Triomphe",
+    "Jardin de Tuileries",
+    "Champ Elysees",
+    "Palace du Versailles"
+  ]
 }
+
+p Paris_touristy_spots
