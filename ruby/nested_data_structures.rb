@@ -48,4 +48,11 @@ Paris_touristy_spots = {
   ]
 }
 
-p Paris_touristy_spots
+puts "Paris is a very popular travel destination in Europe."
+puts "I'm going to tell you a few of the most famous attractions!"
+puts "Famous painting at the Louvre: #{Paris_touristy_spots[:musee_du_Louvre][:paintings][:Leonardo_da_Vinci]}"
+puts "Famous sculture at the Louvre: #{Paris_touristy_spots[:musee_du_Louvre][:sculptures][0]}"
+puts "Famous painting at Musee d'Orsay: #{Paris_touristy_spots[:musee_dorsay][:paintings][2]}"
+puts "Famous artist at Musee d'Orsay: #{Paris_touristy_spots[:musee_dorsay][:artists][0]}"
+puts "Famous chapel: #{Paris_touristy_spots[:cathedrals][0]}"
+puts "Famous landmark: #{Paris_touristy_spots[:famous_landmarks][2]}"
