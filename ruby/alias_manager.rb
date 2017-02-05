@@ -13,16 +13,28 @@ def swap_first_last(name)
 end 
 =end
 
-def convert_vowel(letter)
+def convert_vowel(letters)
   vowels = "aeiou"
-  if vowels.include?(letter)
+  if vowels.include?(letters)
     if letter == "u"
       letter = "a"
     else
-      letter = vowels[vowels.index(letter) + 1]
+      letter = vowels[vowels.index(letters) + 1]
     end
   end
 end 
+
+def convert_consonants(letters)
+  consonants = "bcdfghjklmnpqrstvwxyz"
+  if consonants.include?(letters)
+    if letters == "z"
+      letters = "a"
+    else
+      letters = consonants[consonants.index(letters) + 1]
+    end
+  end
+end
+
 
 
 
