@@ -25,14 +25,20 @@ def converted_name(user_name)
   new_letters.join
 end
 
-def swap_converted_name(converted_name)
-  secret_agent_name = converted_name.split(' ').reverse.join
-end 
-
-secret_name = {}
+secret_agent_names = {}
+user_name = nil
 
 puts "Welcome to the super secret agent name generator."
-puts "Enter your first and last name."
-user_name = gets.chomp
+puts "Enter the name you would like to convert."
+puts "Enter 'quit' when you are done!"
+until user_name == "quit"
+  user_name = gets.chomp.downcase
+  new_secret_name = converted_name(user_name) # store new fake name
+  puts "Your super secret agent name is: #{new_secret_name}"
+  secret_agent_names[user_name] = new_secret_name # store names in hash
+  puts "Enter another name, or enter 'quit'."
+end 
 
-
+secret_agent_names.each do |real_name, agent_name| 
+  puts "#{real_name}'s new super secret agent name is #{agent_name}!"
+end 
