@@ -8,7 +8,7 @@
 # Print results to screen
 
 
-def convert_name(user_name)
+def converted_name(user_name)
   vowels = ['a', 'e', 'i', 'o', 'u']
   consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 
                 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
@@ -23,14 +23,16 @@ def convert_name(user_name)
     end
   end
   new_letters.join
+end
+
+def swap_converted_name(converted_name)
+  secret_agent_name = converted_name.split(' ').reverse.join
 end 
 
-p convert_name("Graceu Nohz")
-
-=begin 
 secret_name = {}
 
 puts "Welcome to the super secret agent name generator."
 puts "Enter your first and last name."
 user_name = gets.chomp
-=end 
+
+
