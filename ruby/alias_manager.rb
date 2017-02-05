@@ -8,28 +8,15 @@
 # Print results to screen
 
 
-def convert_vowels(user_name)
+def convert_name(user_name)
   vowels = ['a', 'e', 'i', 'o', 'u']
-  user_name = user_name.split('')
-  new_letters = user_name.map do |letter|
-    if vowels.include?(letter)
-      vowels.rotate(1)[vowels.index(letter)]
-    else
-      letter
-    end
-  end
-  new_letters.join
-end 
-
-# p convert_vowels("Gracu")
-
-
-def convert_consonants(user_name)
   consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 
                 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
   user_name = user_name.split('')
   new_letters = user_name.map do |letter|
-    if consonants.include?(letter) 
+    if vowels.include?(letter)
+      vowels.rotate(1)[vowels.index(letter)]
+    elsif consonants.include?(letter) 
       consonants.rotate(1)[consonants.index(letter)]
     else 
       letter
@@ -38,6 +25,12 @@ def convert_consonants(user_name)
   new_letters.join
 end 
 
-# p convert_consonants("bdz")
+p convert_name("Graceu Nohz")
 
+=begin 
+secret_name = {}
 
+puts "Welcome to the super secret agent name generator."
+puts "Enter your first and last name."
+user_name = gets.chomp
+=end 
