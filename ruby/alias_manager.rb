@@ -7,25 +7,6 @@
 # Create empty hash that will store user names
 # Print results to screen
 
-=begin
-def converted_name(user_name)
-  vowels = ['a', 'e', 'i', 'o', 'u']
-  consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 
-                'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-  user_name = user_name.split('')
-  new_letters = user_name.map do |letter|
-    if vowels.include?(letter)
-      vowels.rotate(1)[vowels.index(letter)]
-    elsif consonants.include?(letter) 
-      consonants.rotate(1)[consonants.index(letter)]
-    else 
-      letter
-    end
-  end
-  new_letters.join
-end
-=end
-
 def convert_letters(letters)
   vowels = "aeiou"
   consonants = "bcdfghjklmnpqrstvwxyz"
