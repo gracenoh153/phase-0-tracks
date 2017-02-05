@@ -9,57 +9,73 @@
 =end 
 
 # establish empty hash
-designer_client_info = {}
-
 # ask designer/user for client info then assign to empty hash
-puts "What is the client's name?"
-designer_client_info[:client_name] = gets.chomp
 
-puts "What is the client's age?"
-designer_client_info[:client_age] = gets.chomp.to_i
+client_info = {}
 
-puts "How many children does the client have?"
-designer_client_info[:client_kids] = gets.chomp.to_i
+puts "Welcome designer! Enter your client's information below:"
+puts "Name:"
+client_name = gets.chomp
+client_info[:client_name] = client_name
 
-puts "What color theme would the client like to have?"
-designer_client_info[:client_theme] = gets.chomp
+puts "Age:"
+client_age = gets.chomp.to_i
+client_info[:client_age] = client_age
 
-puts "How many rooms would the client like to decorate?"
-designer_client_info[:client_rooms] = gets.chomp.to_i
+puts "Number of children:"
+client_kids = gets.chomp.to_i
+client_info[:number_kids] = client_kids
 
-puts "How many floors does the client's home have?"
-designer_client_info[:client_floors] = gets.chomp.to_i
+puts "Preferred color theme:"
+color_theme = gets.chomp
+client_info[:color_pref] = color_theme
+
+puts "Number of rooms to decorate:"
+room_number_requested = gets.chomp.to_i
+client_info[:num_rooms_requested] = room_number_requested
+
+puts "Likes abstract decor? (yes/no)"
+abstract_decor = gets.chomp
+  until abstract_decor.downcase == "yes" || abstract_decor.downcase == "no"
+    puts "Please enter 'yes' or 'no'."
+    abstract_decor = gets.chomp
+    if abstract_decor.downcase == "yes"
+      abstract_pref = true
+    else 
+      abstract_pref = false
+    end
+  end 
+client_info[:likes_abstract_decor] = abstract_pref
 
 # print client info
 puts "*********************"
-puts "client_name: #{designer_client_info[:client_name]}"
-puts "client_age: #{designer_client_info[:client_age]}"
-puts "client_kids: #{designer_client_info[:client_kids]}"
-puts "client_theme: #{designer_client_info[:client_theme]}"
-puts "client_rooms: #{designer_client_info[:client_rooms]}"
-puts "client_floors: #{designer_client_info[:client_floors]}"
+puts "client_name: #{client_info[:client_name]}"
+puts "client_age: #{client_info[:client_age]}"
+puts "client_kids: #{client_info[:number_kids]}"
+puts "client_theme: #{client_info[:color_pref]}"
+puts "client_rooms: #{client_info[:num_rooms_requested]}"
+puts "likes_abstract_decor: #{client_info[:likes_abstract_decor]}"
 puts "*********************"
 
 # give opportunity for hash to be corrected
-puts "Do any of the keys need to be changed/updated?"
-puts "If changes are needed, type 'yes'. If no changes are needed, type 'none'."
-make_changes = gets.chomp
-
-if make_changes.downcase == "yes"
-  puts "Enter the key (e.g. 'client_theme') you would like to change."
-  key_change = gets.chomp
-  puts "What would you like to change the value to?"
-  new_value = gets.chomp
-  designer_client_info[key_change.to_sym] = new_value
-end 
+puts "Would you like to change any of the information above?"
+puts "Enter 'yes' or if no changes are needed, enter 'none'."
+update_info = gets.chomp
+  if update_info == "yes"
+    puts "Enter which key you would like to update (e.g. client_age)."
+    update_key = gets.chomp
+    puts "What would you like to change the value to?"
+    new_value = gets.chomp
+    client_info[update_key.to_sym] = new_value
+  end
 
 # print final version of hash 
 puts "This is your client's information."
 puts "*********************"
-puts "client_name: #{designer_client_info[:client_name]}"
-puts "client_age: #{designer_client_info[:client_age]}"
-puts "client_kids: #{designer_client_info[:client_kids]}"
-puts "client_theme: #{designer_client_info[:client_theme]}"
-puts "client_rooms: #{designer_client_info[:client_rooms]}"
-puts "client_floors: #{designer_client_info[:client_floors]}"
+puts "client_name: #{client_info[:client_name]}"
+puts "client_age: #{client_info[:client_age]}"
+puts "client_kids: #{client_info[:number_kids]}"
+puts "client_theme: #{client_info[:color_pref]}"
+puts "client_rooms: #{client_info[:num_rooms_requested]}"
+puts "likes_abstract_decor: #{client_info[:likes_abstract_decor]}"
 puts "*********************"
