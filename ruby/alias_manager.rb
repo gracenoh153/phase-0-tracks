@@ -24,3 +24,20 @@ end
 # p convert_vowels("Gracu")
 
 
+def convert_consonants(user_name)
+  consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 
+                'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+  user_name = user_name.split('')
+  new_letters = user_name.map do |letter|
+    if consonants.include?(letter) 
+      consonants.rotate(1)[consonants.index(letter)]
+    else 
+      letter
+    end
+  end
+  new_letters.join
+end 
+
+# p convert_consonants("bdz")
+
+
