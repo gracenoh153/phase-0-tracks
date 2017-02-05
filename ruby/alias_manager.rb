@@ -42,14 +42,20 @@ user_name = nil
 puts "Welcome to the super secret agent name generator."
 puts "Enter the name you would like to convert."
 puts "Enter 'quit' when you are done!"
+puts "-------------------------"
 until user_name == "quit"
   user_name = gets.chomp.downcase
   new_secret_name = convert_name(user_name) # store new fake name
   puts "Your super secret agent name is: #{new_secret_name}"
-  secret_agent_names[user_name] = new_secret_name # store names in hash
-  puts "Enter another name, or enter 'quit'."
-  user_name = gets.chomp
+  if user_name == "quit"
+    break
+  else 
+    secret_agent_names[user_name] = new_secret_name # store names in hash
+    puts "Enter another name, or enter 'quit'."
+  end 
 end 
+
+puts "-------------------------"
 
 secret_agent_names.each do |real_name, agent_name| 
   puts "#{real_name}'s new super secret agent name is #{agent_name}!"
