@@ -1,13 +1,28 @@
 # Method to create a list
-# input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
-  # create empty hash
+# steps: create method with an empty hash (grocery_list)
+
+# Method to add an item to a list
+# input: list, item name, and optional quantity
+# steps:   
   # get string from user for items wanted
   # split string
-  # store items one at a time in the hash as keys
-  # set default quantity
-  # print the list to the console [can you use one of your other methods here?]
-# output: [what data type goes here, array or hash?]
+  # store items as key/pair values within grocery_list 
+# output: 
+
+# Method to remove an item from the list
+# input: 
+# steps:
+# output:
+
+# Method to update the quantity of an item
+# input:
+# steps:
+# output:
+
+# Method to print a list and make it look pretty
+# input:
+# steps:
+# output:
 
 # BUSINESS LOGIC
 def create_hash
@@ -40,7 +55,6 @@ def print_list(grocery_list)
     puts "----------"
 end 
 
-
 list = create_hash
 
 # p add_items(list, "carrots", 2)
@@ -48,34 +62,40 @@ list = create_hash
 
 # USER INTERFACE
 
-=begin 
-puts "Welcome to the grocery list compiler."
-puts "Enter the item and quantity that you would like."
-puts "Enter 'done' when finished."
-    item_and_quantity = gets.chomp.split(" ")
-    item = item_and_quantity[0]
-    quantity = item_and_quantity[1]
-    add_items(list, item, quantity)
-    puts print_list(list)
-=end 
 
-valid_response = false 
-until valid_response 
-    puts "Add item and quantity you would like to purchase; type 'done' when finished."
-    item_and_quantity = gets.chomp.split(" ")
+puts "Welcome to the grocery list compiler."
+while true
+  puts "Enter the item and quantity that you would like, separated by a space."
+  puts "Enter 'done' when finished."
+  item_and_quantity = gets.chomp.split(" ")
+  if item_and_quantity == "done"
+    false 
+    break
+  else 
     item = item_and_quantity[0]
     quantity = item_and_quantity[1]
-    
-    
-    if item_and_quantity == "done"
-        valid_response = true
-    
-    else
     add_items(list, item, quantity)
     puts print_list(list)
     end 
+end
 
-end 
+=begin 
+puts "Welcome to the grocery list compiler."
+valid_response = false 
+until valid_response 
+  puts "Enter the item and quantity that you would like, separated by a space."
+  puts "Enter 'done' when finished."
+  item_and_quantity = gets.chomp.split(" ")
+  item = item_and_quantity[0]
+  quantity = item_and_quantity[1]
+#  if item_and_quantity == "done"
+#      valid_response = true
+# else
+  add_items(list, item, quantity)
+  puts print_list(list)
+#  end 
+end
+=end
 
 =begin 
 item_and_quantity = "" 
@@ -93,25 +113,3 @@ deleted_item = gets.chomp
 remove_items(list, deleted_item)
 puts print_list(list)
 =end 
-
-
-
-# Method to add an item to a list
-# input: list, item name, and optional quantity
-# steps:
-# output:
-
-# Method to remove an item from the list
-# input: 
-# steps:
-# output:
-
-# Method to update the quantity of an item
-# input:
-# steps:
-# output:
-
-# Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
