@@ -67,6 +67,7 @@ puts "Welcome to the grocery list compiler."
 valid_response = false 
 until valid_response 
   puts "Enter the item and quantity that you would like, separated by a space."
+  puts "If your item name is more than two words, use an underscore(_) instead of a space."
   puts "Enter 'done' when finished."
   item_choice = gets.chomp 
   item_and_quantity = item_choice.split(" ")
@@ -80,7 +81,6 @@ until valid_response
     puts print_list(list)
   end 
 end
-
 puts "------------"
 puts "Is there an item you would like to remove in your grocery list?"
 puts "If yes, enter the item name. If not, enter 'skip'."
@@ -92,7 +92,29 @@ else
   puts print_list(list)
 end 
 
+puts "Would you like to update the quantity of an item you're purchasing?"
+puts "If yes, enter the item followed by the new quantity separated by a space."
+puts "For example, 'apples 4'. If not, enter 'skip'."
+update_choice = gets.chomp
+new_item_and_quantity = update_choice.split(" ")
+if update_choice == "skip"
+  puts "Awesome. Here is your final list. Happy shopping!"
+  puts print_list(list)
+else
+  quantity = new_item_and_quantity[1]
+  update_quantity(list, item, quantity)
+  puts print_list(list)
+end
 
+
+
+
+
+
+
+
+
+# CODE THAT DOESN'T WORK
 =begin 
 puts "Welcome to the grocery list compiler."
 while true
