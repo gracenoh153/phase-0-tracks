@@ -7,22 +7,28 @@
   # get string from user for items wanted
   # split string
   # store items as key/pair values within grocery_list 
-# output: 
+# output: none 
 
 # Method to remove an item from the list
-# input: 
-# steps:
-# output:
+# input: list, item
+# steps: 
+  # get string from user
+  # use .delete to search for key that matches string, then delete
+  # implicitly return updated list 
+# output: none 
 
 # Method to update the quantity of an item
-# input:
+# input: list, item, quantity 
 # steps:
-# output:
+  # get string from user
+  # search for key and assign new quantity to value
+# output: none
 
 # Method to print a list and make it look pretty
-# input:
+# input: grocery list hash
 # steps:
-# output:
+  # for each item in grocery list has, print the item and quantity
+# output: item and quantity in grocery list
 
 # BUSINESS LOGIC
 def create_hash
@@ -61,6 +67,8 @@ list = create_hash
 # p list
 # p print_list(list)
 
+
+
 # USER INTERFACE
 
 puts "Welcome to the grocery list compiler."
@@ -74,7 +82,6 @@ until valid_response
   item_and_quantity = item_choice.split(" ")
   if item_choice == "done"
     valid_response = true  
-#    break
   else 
     item = item_and_quantity[0]
     quantity = item_and_quantity[1]
@@ -107,65 +114,3 @@ else
   update_quantity(list, item, quantity)
   puts print_list(list)
 end
-
-
-
-
-
-
-
-
-
-# CODE THAT DOESN'T WORK
-=begin 
-puts "Welcome to the grocery list compiler."
-while true
-  puts "Enter the item and quantity that you would like, separated by a space."
-  puts "Enter 'done' when finished."
-  item_and_quantity = gets.chomp.split(" ")
-  if item_and_quantity == "done"
-    false 
-    break
-  else 
-    item = item_and_quantity[0]
-    quantity = item_and_quantity[1]
-    add_items(list, item, quantity)
-    puts print_list(list)
-    end 
-end
-=end 
-
-=begin 
-puts "Welcome to the grocery list compiler."
-valid_response = false 
-until valid_response 
-  puts "Enter the item and quantity that you would like, separated by a space."
-  puts "Enter 'done' when finished."
-  item_and_quantity = gets.chomp.split(" ")
-  item = item_and_quantity[0]
-  quantity = item_and_quantity[1]
-#  if item_and_quantity == "done"
-#      valid_response = true
-# else
-  add_items(list, item, quantity)
-  puts print_list(list)
-#  end 
-end
-=end
-
-=begin 
-item_and_quantity = "" 
-until item_and_quantity == "done"
-    puts "Add item and quantity you would like to purchase; type 'done' when finished."
-    item_and_quantity = gets.chomp.split(" ")
-      break if item_and_quantity == "done"
-    item = item_and_quantity[0]
-    quantity = item_and_quantity[1]
-    add_items(list, item, quantity)
-    puts print_list(list)
-end 
-puts "Would you like to delete any items from the list?"
-deleted_item = gets.chomp
-remove_items(list, deleted_item)
-puts print_list(list)
-=end 
