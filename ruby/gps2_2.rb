@@ -83,7 +83,7 @@ until valid_response
   end 
 end
 puts "------------"
-puts "Is there an item you would like to remove in your grocery list?"
+puts "Is there an item you would like to remove from your grocery list?"
 puts "If yes, enter the item name. If not, enter 'skip'."
 remove_choice = gets.chomp
 if remove_choice == "skip"
