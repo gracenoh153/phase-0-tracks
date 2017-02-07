@@ -59,10 +59,31 @@ list = create_hash
 
 # p add_items(list, "carrots", 2)
 # p list
+# p print_list(list)
 
 # USER INTERFACE
 
+puts "Welcome to the grocery list compiler."
+valid_response = false 
+until valid_response 
+  puts "Enter the item and quantity that you would like, separated by a space."
+  puts "Enter 'done' when finished."
+  user_input = gets.chomp 
+  item_and_quantity = user_input.split(" ")
+  if user_input == "done"
+    valid_response = true  
+    break
+  else 
+    item = item_and_quantity[0]
+    quantity = item_and_quantity[1]
+    add_items(list, item, quantity)
+    puts print_list(list)
+  end 
+end
 
+puts 
+
+=begin 
 puts "Welcome to the grocery list compiler."
 while true
   puts "Enter the item and quantity that you would like, separated by a space."
@@ -78,6 +99,7 @@ while true
     puts print_list(list)
     end 
 end
+=end 
 
 =begin 
 puts "Welcome to the grocery list compiler."
