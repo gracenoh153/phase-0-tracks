@@ -38,21 +38,21 @@ def add_items(grocery_list, item, quantity)
 end
 
 def remove_items(grocery_list, item)
-    grocery_list.delete(item)
-    grocery_list
+  grocery_list.delete(item)
+  grocery_list
 end 
 
 def update_quantity(grocery_list, item, quantity)
-    grocery_list[item] = quantity
+  grocery_list[item] = quantity
 end
 
 def print_list(grocery_list)
-    puts "----------"
-    puts "YOUR GROCERY LIST:"
-    grocery_list.each do |item, quantity|
-        puts "#{item}: #{quantity}"
-    end
-    puts "----------"
+  puts "----------"
+  puts "YOUR GROCERY LIST:"
+  grocery_list.each do |item, quantity|
+      puts "#{item}: #{quantity}"
+  end
+  puts "----------"
 end 
 
 list = create_hash
