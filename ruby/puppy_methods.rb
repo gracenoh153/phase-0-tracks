@@ -23,3 +23,10 @@ class Puppy
   end
 
 end
+
+puppy = Puppy.new
+puppy.fetch('ball')
+puppy.speak(3)
+puppy.rollover
+puppy.dog_years(3)
+puppy.jump 
