@@ -48,7 +48,7 @@ end
 
 def print_list(grocery_list)
     puts "----------"
-    puts "Your grocery list:"
+    puts "YOUR GROCERY LIST:"
     grocery_list.each do |item, quantity|
         puts "#{item}: #{quantity}"
     end
@@ -68,11 +68,11 @@ valid_response = false
 until valid_response 
   puts "Enter the item and quantity that you would like, separated by a space."
   puts "Enter 'done' when finished."
-  user_input = gets.chomp 
-  item_and_quantity = user_input.split(" ")
-  if user_input == "done"
+  item_choice = gets.chomp 
+  item_and_quantity = item_choice.split(" ")
+  if item_choice == "done"
     valid_response = true  
-    break
+#    break
   else 
     item = item_and_quantity[0]
     quantity = item_and_quantity[1]
@@ -81,7 +81,17 @@ until valid_response
   end 
 end
 
-puts 
+puts "------------"
+puts "Is there an item you would like to remove in your grocery list?"
+puts "If yes, enter the item name. If not, enter 'skip'."
+remove_choice = gets.chomp
+if remove_choice == "skip"
+  puts "Looks good."
+else
+  remove_items(list, remove_choice)
+  puts print_list(list)
+end 
+
 
 =begin 
 puts "Welcome to the grocery list compiler."
