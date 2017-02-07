@@ -67,7 +67,8 @@ puts "Welcome to the grocery list compiler."
 valid_response = false 
 until valid_response 
   puts "Enter the item and quantity that you would like, separated by a space."
-  puts "If your item name is more than two words, use an underscore(_) instead of a space."
+  puts "If your item name is more than one word, use an underscore(_) instead of a space."
+  puts "For example: 'ice_cream 2'."
   puts "Enter 'done' when finished."
   item_choice = gets.chomp 
   item_and_quantity = item_choice.split(" ")
