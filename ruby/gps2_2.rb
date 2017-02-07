@@ -102,6 +102,7 @@ if update_choice == "skip"
   puts "Awesome. Here is your final list. Happy shopping!"
   puts print_list(list)
 else
+  item = new_item_and_quantity[0]
   quantity = new_item_and_quantity[1]
   update_quantity(list, item, quantity)
   puts print_list(list)
