@@ -11,9 +11,11 @@ class Santa
     ]
 
     @ethnicity = [
-      
-
+      "White", "Black or African American", "American Indian",
+      "Alaska Native", "Asian", "Pacific Islander", "Native Hawaiian",
+      "Hispanic, Latino, or Spanish Origin", "other"
     ]
+    
   end 
   
   def eat_milk_and_cookies(cookie_type)
