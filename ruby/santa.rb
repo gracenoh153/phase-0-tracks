@@ -32,9 +32,21 @@ class Santa
     puts "That was a good #{cookie_type}!"
   end 
 
+  def celebrate_birthday
+    @age += 1
+  end 
+
+  def get_mad_at(reindeer_name)
+    p @reindeer_ranking
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking.push(reindeer_name)
+    puts "Behave, #{reindeer_name}! Go to the back of the line."
+    p @reindeer_ranking
+  end 
 end 
 
 # santa = Santa.new 
 # santa.speak
 # santa.eat_milk_and_cookies("sugar cookie")
 
+santas = []
