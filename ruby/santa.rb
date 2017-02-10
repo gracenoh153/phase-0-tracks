@@ -15,7 +15,11 @@ class Santa
       "Alaska Native", "Asian", "Pacific Islander", "Native Hawaiian",
       "Hispanic, Latino, or Spanish Origin", "other"
     ]
-    
+
+    @reindeer_ranking = [
+      "Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", 
+      "Comet", "Cupid", "Donner", "Blitzen"
+    ]
   end 
   
   def eat_milk_and_cookies(cookie_type)
