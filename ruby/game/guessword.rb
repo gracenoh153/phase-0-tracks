@@ -46,23 +46,22 @@ class GuessWord
 
   def word_visual
     secret_word.length.times do 
-      @secret_word_array << "_"
+      @secret_word_array << " _ "
     end 
-      @secret_word_array.join("")
+      puts @secret_word_array.join("")
   end 
 
   def letter_repeated(letter)
-    @letters_guessed.index(letter) == nil 
+    letters_guessed.index(letter) == nil 
   end 
 
   def letter_correct(letter)
-    secret_word.index(letter) != nil
+    secret_word.include?(letter)
     @secret_word_array.delete_at(secret_word.index(letter))
     @secret_word_array.insert(secret_word.index(letter), letter) 
   end 
 
-  def letter_incorrect(letter)
-    puts "Nope, guess again...!"
+  def guess_count 
     @num_tries += 1 
   end 
 
@@ -76,26 +75,32 @@ class GuessWord
 end 
 
 # USER INTERFACE
-puts "Let's play a game! You will need at least one other person than yourself."
-puts "Have the other person guess the word, one letter at a time."
-puts "The number of guesses available will be equal to the length of the word."
+puts "Let's play a game!"
+puts "Have another person guess the word, one letter at a time."
 puts "What is your secret word?"
 secret_word = gets.chomp
 guess = GuessWord.new(secret_word)
-puts "The word is #{secret_word.length} letters long!"
-puts guess.word_visual 
-
-while guess.increase_count < guess.secret_word.length 
-  puts "Second player, enter a letter"
+system "clear"
+guess.word_visual
+puts ""
+puts "The number of guesses available will be equal to the length of the word."
+puts "Second player, guess a letter in the word."
+while guess.guess_count < guess.secret_word.length 
   letter_guessed = gets.chomp
 
-  if !guess.letter_repeated(letter_guessed)
-    puts "You guessed this letter already. Try another one."
+  if guess.letter_repeated == true 
+    puts "You already guessed this letter."
+    puts "Try again."
+
   elsif guess.letter_correct(letter_guessed)
     guess.letters_guessed << letter_guessed
     puts guess.secret_word_array.join
-    break if guess.secret_word_array.join == secret_word
-  elsif guess.letter_incorrect(letter_guessed)
+
+    if guess.secret_word_array.join == secret_word
+      break
+    end 
+    
+  elsif guess.guess_count(letter_guessed)
     guess.letters_guessed << letter_guessed
     puts "Nope..."
   end
