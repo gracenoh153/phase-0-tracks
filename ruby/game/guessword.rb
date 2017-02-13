@@ -34,44 +34,92 @@
 
 class GuessWord
 
-  def initialize
+attr_reader :guesses_left 
+attr_accessor :word_to_guess, :letters_guessed, :game_is_over, :won_game, :lost_game
+
+  def initialize(word_to_guess)
     @secret_word = []
-    @guesses_allowed
+    @secret_word_array = []
+    @word_to_guess = word_to_guess
     @guess_count = 0
-    @letters_guessed = [] 
+    @letters_guessed = []
+    @guesses_left  
+    @game_is_over = false
+    @lost_game = false 
+    @won_game = false 
   end 
 
-  def get_word(chosen_word)
-    @secret_word << chosen_word.split("")
+  def store_word(word_to_guess)
+    @secret_word << word_to_guess.split("")
   end 
-
-  def guesses_allowed(chosen_word)
-    @guesses_allowed = chosen_word.length 
-  end 
-
-  def guess_counter
-    @guess_count += 1 
-  end
 
   def visual_rep
-    @secret_word.length.times do 
-     @secret_word << "_" 
-    end 
-    puts @secret_word.join("")
+    word_to_guess.length.times do 
+     @secret_word_array << "_"
+    end  
+    @secret_word_array.join("")
   end  
 
   def check_letter(chosen_letter)
     @letters_guessed << chosen_letter
-    if @secret_word.include?(chosen_letter)
-      @secret_word.map!
+    if @word_to_guess.include?(chosen_letter)
+      @secret_word.delete_at(word_to_guess.index(chosen_letter))
+      @secret_word.insert(word_to_guess.index(letter), letter)
     elsif @letters_guessed.include?(chosen_letter)
       puts "You already guessed that!"
+    elsif !@word_to_guess.include?(chosen_letter)
+      puts "Noooope."
     end 
+    @guess_count += 1 
   end 
-  
+
+  def guesses_left
+    total_guesses = @word_to_guess.length 
+    already_guessed = @letters_guessed.length
+    @guesses_left = total_guesses - already_guessed
+    if @guesses_left == 0
+      @lost_game = true 
+      @game_is_over = true 
+    end 
+    return @guesses_left
+  end 
+
+  def check_word
+    check_word = secret_word.join("")
+    if check_word == @word_to_guess
+      @won_game = true 
+      @game_is_over = true 
+    end 
+    return check_word
+  end 
+
 end 
 
+# USER INTERFACE
+puts "Let's play a game!"
+puts "Have another person guess the word, one letter at a time."
+puts "What is your secret word?"
+word_to_guess = gets.chomp
+guess = GuessWord.new(word_to_guess)
+guess.store_word(word_to_guess)
+system "clear"
+puts guess.visual_rep
+puts ""
+puts "The number of guesses available will be equal to the length of the word."
 
+until guess.game_is_over == true
+  puts "Second player, guess a single letter in the word."
+  chosen_letter = gets.chomp
+  guess.check_letter(chosen_letter)
+  puts "You have #{@guesses_left} guesses left."
+  guess.check_word
+end 
+
+if guess.lost_game
+  puts "You're just not that great at this, are you?..."
+elsif guess.won_game
+  puts "You're so good at this!!"
+end 
 
 
 =begin 
