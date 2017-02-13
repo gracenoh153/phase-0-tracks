@@ -32,39 +32,58 @@
             - taunt them 
 =end 
 
-=begin 
 class GuessWord
-  attr_accessor :word 
 
   def initialize
     @chosen_word = []
-    @user_guess = ""
     @letters_guessed = []
-    @user_guesses = 0
+    @lost_game = false
+    @won_game = false
+    @out_of_guesses = false
   end 
 
   def chosen_word(word)
     @chosen_word = word.split("")
+
   end
 
+  def letters_guessed(letter)
+    @letters_guessed << letter
+  end 
+
+  def already_guessed(letter)
+    @letters_guessed.include?(letter)
+  end 
+
 end 
-=end 
+
 
 # USER INTERFACE
-puts "Let's play a game!"
-puts "Enter a word, and have someone else guess the word, one letter at a time."
+puts "Let's play a game! You will need at least one other person than yourself."
+puts "First player, enter a word. Have someone else guess the word, one letter at a time."
 puts "The number of guesses available will be equal to the length of the word."
 puts "What is your secret word?"
-secret_word = gets.chomp
-secret = secret_word.split("")
+chosen_word = gets.chomp
+puts "Second player, you have #{chosen_word.length} tries to guess the correct word."
+secret_word = chosen_word.split("")
 store_word = [] 
 store_word << secret_word
-p secret
-p secret.count 
-
 guess_count = 0 
-
-until guess_count == secret_word 
+wrong_guesses = 0 
+puts "What is the letter you would like to guess?"
+guessed_letter = gets.chomp
+until guess_count == chosen_word.length
+  if store_word.include?("#{guessed_letter}")
+    puts "You have guessed correctly."
+    puts "Guess another letter."
+    guessed_letter = gets.chomp
+  else 
+    puts "Incorrect!"
+    wrong_guesses += 1 
+    puts "Guess another letter."
+    guessed_letter = gets.chomp
+  end 
+  guess_count += 1 
 end 
 
 
