@@ -4,7 +4,7 @@
     * initialize method
         * determine variables
 
-    * method that asks user for word to start game
+    * method that gets user for word to start game
         * get user word
         * split word into letters
         * store letters in array
@@ -34,7 +34,50 @@
 
 class GuessWord
 
-  attr_reader :lost_game, :won_game
+  def initialize
+    @secret_word = []
+    @guesses_allowed
+    @guess_count = 0
+    @letters_guessed = [] 
+  end 
+
+  def get_word(chosen_word)
+    @secret_word << chosen_word.split("")
+  end 
+
+  def guesses_allowed(chosen_word)
+    @guesses_allowed = chosen_word.length 
+  end 
+
+  def guess_counter
+    @guess_count += 1 
+  end
+
+  def visual_rep
+    @secret_word.length.times do 
+     @secret_word << "_" 
+    end 
+    puts @secret_word.join("")
+  end  
+
+  def check_letter(chosen_letter)
+    @letters_guessed << chosen_letter
+    if @secret_word.include?(chosen_letter)
+      @secret_word.map!
+    elsif @letters_guessed.include?(chosen_letter)
+      puts "You already guessed that!"
+    end 
+  end 
+  
+end 
+
+
+
+
+=begin 
+class GuessWord
+
+  attr_reader :lost_game, :won_game, :guess_count
   attr_accessor :secret_word, :word_visual, :letter_repeated, :letter_correct
 
   def initialize(secret_word)
@@ -99,7 +142,7 @@ while guess.guess_count < guess.secret_word.length
     if guess.secret_word_array.join == secret_word
       break
     end 
-    
+
   elsif guess.guess_count(letter_guessed)
     guess.letters_guessed << letter_guessed
     puts "Nope..."
@@ -112,4 +155,4 @@ else
   guess.lost_game
 end 
 
-
+=end 
