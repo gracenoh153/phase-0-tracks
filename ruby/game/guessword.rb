@@ -2,34 +2,42 @@
 * word guessing game class
 
     * initialize method
-        * determine variables
+        * determine instance variables
 
-    * method that gets user for word to start game
+    * method that stores chosen word
         * get user word
         * split word into letters
         * store letters in array
 
-    *method that converts length of words into underscores
-        * store length of word 
-        * set guesses allowed equal to length of word
+    *method that converts length of chosen word into underscores
+        * get length of chosen word 
         * display length of word in "_" symbols
 
-    * method that displays user progress
-        * get letter 
-        * reduce guesses left by one
-        * if letter is found within word
-            - replace underscore with letter
-            - display progress to user
-        * else
-            - give visual output that it isn't in the word
-        * let user know how many guesses they have left
-        * if word has already been guessed before, guesses left remain same
+    * method that stores guessed letters 
+        * get letter
+        * store letter in array 
+
+    * method that checks letters against chosen word
+        * if guessed letter is within chosen word,
+          * delete hash at that location, and replace it with the letter
+          * confirm letter has been guessed correctly
+        * elsif guessed letter is not within chosen word,
+          * confirm guess was incorrect
+        * elsif guessed letter has been guessed already,
+          * confirm same guess has already been made 
+      * return correctly guessed letters array 
+      * increase guess count by one  
+
+    * method that checks guesses left
+        * total guesses is equal to chosen word length
+        * check length of array that stores letters guessed; this equals times already guessed
+        * total guesses - already guessed = guesses left 
 
     * method for end of game
-        * if user guesses word within number of guesses allowed
-            - display congratulatory message
-        * else
-            - taunt them 
+        * if there are no more guesses left and the user has not guessed the correct word
+          * game has been lost and game is over
+        * if there are no more guesses left and the user has guessed correctly
+          * game has been won, and game is over
 =end 
 
 class GuessWord
@@ -89,8 +97,9 @@ attr_accessor :word_to_guess, :letters_guessed, :game_is_over, :won_game, :lost_
     if @guesses_left == 0 && @secret_word.join("") != @secret_word_array.join("")
       @lost_game = true 
       @game_is_over = true 
-    elsif @secret_word.join("") == @secret_word_array.join("")
+    elsif @guesses_left == 0 && @secret_word.join("") == @secret_word_array.join("")
       @won_game = true
+      @game_is_over = true 
     end
     return @game_is_over
   end 
@@ -120,5 +129,5 @@ end
 if guess.lost_game
   puts "You're just not that great at this, are you?..."
 elsif guess.won_game
-  puts "You're so good at this!!"
+  puts "You got the word!!!! You're so good at this!! :D :D "
 end 
