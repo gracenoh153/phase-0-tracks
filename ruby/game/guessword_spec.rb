@@ -2,44 +2,33 @@ require_relative 'GuessWord'
 
 describe GuessWord do 
 
-  let (:guess) {GuessWord.new}
+  let (:guess) {GuessWord.new("test")}
 
-  it "get word to guess from user" do
-    expect(guess.chosen_word).to eq "unicorn"
+  it "gets word from user" do
+    expect(guess.initialize).to eq ("test")
+  end 
+
+  it "stores word in array" do
+    expect(guess.store_word).to eq (["t", "e", "s", "t"])
   end
 
-  it "increment number of guesses" do
-    expect(guess.guess_count).to eq 0 
-  end
-
-  it "check if letter guessed exists in word" do
-    expect 
-  end
-
-  it "check if letter has already been guessed" do
-    expect 
+  it "gets length of chosen word and puts (underscore * length) into array" do
+    expect(guess.visual_rep).to eq ("____")
   end 
 
-  it "store letter guessed in array" do 
-    expect 
+  it "store letters guess in array" do
+    expect(guess.store_guesses("s").to eq (["s"])
   end 
 
-  it "show current progress of guessing secret word" do
-    expect 
-  end
-
-  it "show number of guesses remaining" do
-    expect 
+  it "checks letter to see if it exists in word" do
+    expect(guess.check_letter("s").to eq (true)
   end 
 
-  it "win game" do
-    expect 
+  it "gets the number of guesses left" do
+    expect(guess.guesses_left). to eq (4)
   end 
 
-  it "lose game" do
-    expect 
+  it "compares letters guessed by end of turns, and compares to original word" do
+    expect(guess.check_word). to eq (game_is_over)
   end 
-
-
-
 end
