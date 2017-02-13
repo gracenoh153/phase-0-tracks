@@ -1,7 +1,7 @@
 * word guessing game class
 
     * initialize method
-        * start the game/explain game to user
+        * determine variables 
 
     * method that asks user for word to start game
         * get user word
