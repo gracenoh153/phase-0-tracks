@@ -82,19 +82,16 @@ attr_accessor :word_to_guess, :letters_guessed, :game_is_over, :won_game, :lost_
     total_guesses = @word_to_guess.length 
     already_guessed = @letters_guessed.length
     @guesses_left = total_guesses - already_guessed
-    if @guesses_left == 0
-      @lost_game = true 
-      @game_is_over = true 
-    end 
     return @guesses_left
   end 
 
   def check_word
-    if @game_is_over == true
-      if @secret_word.join("") == @secret_word_array.join("")
-        @won_game = true
-      end
-    end 
+    if @guesses_left == 0 && @secret_word.join("") != @secret_word_array.join("")
+      @lost_game = true 
+      @game_is_over = true 
+    elsif @secret_word.join("") == @secret_word_array.join("")
+      @won_game = true
+    end
     return @game_is_over
   end 
 
@@ -111,7 +108,7 @@ system "clear"
 puts guess.visual_rep
 puts ""
 puts "The number of guesses available will be equal to the length of the word."
-while guess.game_is_over == false 
+until guess.game_is_over == true 
   puts "Second player, guess a single letter in the word."
   chosen_letter = gets.chomp
   guess.store_guesses(chosen_letter)
@@ -125,87 +122,3 @@ if guess.lost_game
 elsif guess.won_game
   puts "You're so good at this!!"
 end 
-
-
-=begin 
-class GuessWord
-
-  attr_reader :lost_game, :won_game, :guess_count
-  attr_accessor :secret_word, :word_visual, :letter_repeated, :letter_correct
-
-  def initialize(secret_word)
-    @secret_word = secret_word
-    @letters_guessed = []
-    @secret_word_array = []
-    @num_tries = 0
-  end 
-
-  def word_visual
-    secret_word.length.times do 
-      @secret_word_array << " _ "
-    end 
-      puts @secret_word_array.join("")
-  end 
-
-  def letter_repeated(letter)
-    letters_guessed.index(letter) == nil 
-  end 
-
-  def letter_correct(letter)
-    secret_word.include?(letter)
-    @secret_word_array.delete_at(secret_word.index(letter))
-    @secret_word_array.insert(secret_word.index(letter), letter) 
-  end 
-
-  def guess_count 
-    @num_tries += 1 
-  end 
-
-  def lost_game
-    puts "Booooo.. You're not so good at this, are you?"
-  end 
-
-  def won_game 
-    puts "Hooray!! You're awesome at this!"
-  end 
-end 
-
-# USER INTERFACE
-puts "Let's play a game!"
-puts "Have another person guess the word, one letter at a time."
-puts "What is your secret word?"
-secret_word = gets.chomp
-guess = GuessWord.new(secret_word)
-system "clear"
-guess.word_visual
-puts ""
-puts "The number of guesses available will be equal to the length of the word."
-puts "Second player, guess a letter in the word."
-while guess.guess_count < guess.secret_word.length 
-  letter_guessed = gets.chomp
-
-  if guess.letter_repeated == true 
-    puts "You already guessed this letter."
-    puts "Try again."
-
-  elsif guess.letter_correct(letter_guessed)
-    guess.letters_guessed << letter_guessed
-    puts guess.secret_word_array.join
-
-    if guess.secret_word_array.join == secret_word
-      break
-    end 
-
-  elsif guess.guess_count(letter_guessed)
-    guess.letters_guessed << letter_guessed
-    puts "Nope..."
-  end
-end 
-
-if guess.secret_word_array.join == secret_word
-  guess.won_game
-else 
-  guess.lost_game
-end 
-
-=end 
