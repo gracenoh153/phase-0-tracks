@@ -69,10 +69,10 @@ attr_accessor :word_to_guess, :letters_guessed, :game_is_over, :won_game, :lost_
       @secret_word_array.delete_at(word_to_guess.index(chosen_letter))
       @secret_word_array.insert(word_to_guess.index(chosen_letter), chosen_letter)
       puts "You got one!"
+    elsif @secret_word.include?(chosen_letter) == false 
+      puts "Noooope."
     elsif @letters_guessed.include?(chosen_letter)
       puts "You already guessed that!"
-    elsif !@word_to_guess.include?(chosen_letter)
-      puts "Noooope."
     end
     return @secret_word_array.join("")
     return @guess_count += 1 
@@ -90,11 +90,12 @@ attr_accessor :word_to_guess, :letters_guessed, :game_is_over, :won_game, :lost_
   end 
 
   def check_word
-    if @secret_word.join("") == @secret_word_array.join("")
-      @won_game = true 
-      @game_is_over = true 
+    if @game_is_over == true
+      if @secret_word.join("") == @secret_word_array.join("")
+        @won_game = true
+      end
     end 
-    return check_word
+    return @game_is_over
   end 
 
 end 
@@ -110,13 +111,12 @@ system "clear"
 puts guess.visual_rep
 puts ""
 puts "The number of guesses available will be equal to the length of the word."
-
-until guess.game_is_over == true
+while guess.game_is_over == false 
   puts "Second player, guess a single letter in the word."
   chosen_letter = gets.chomp
   guess.store_guesses(chosen_letter)
   puts guess.check_letter(chosen_letter)
-  puts "You have #{@guess_count} guesses left."
+  puts "You have #{guess.guesses_left} guesses left."
   guess.check_word
 end 
 
