@@ -7,6 +7,8 @@
 function findLongestString(string) {
   var longestString = "";
 
-  
+  for (var i = 0; i < string.length; i++) {
+    
+  }
 
 }
