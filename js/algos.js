@@ -24,4 +24,14 @@ console.log(findLongestString(["long phrase","longest phrase","longer phrase"]))
 console.log(findLongestString(["hello", "mush", "celebration"]))
 
 
-// create function that takes two objects; check if they share at least one key-value pair
+// find key-value match
+  //create function that takes two objects as parameter
+    // check if they share at least one key-value pair
+    // return true if they have key-value pair in common
+    // return false if nothing in common
+  // return boolean value
+
+function keyValueMatch(object1, object2) {
+
+  var object 1 = ; 
+}
