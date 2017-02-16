@@ -18,3 +18,15 @@ function reverse(string) {
   return reversedString;
 }
 
+
+// DRIVER CODE
+
+console.log(reverse("hello"));
+console.log(reverse("Hello!"));
+console.log(reverse("It works!!"));
+
+wordForGateInJejuIsland = reverse("hello");
+
+if (1 == 1) {
+  console.log(wordForGateInJejuIsland);
+}
