@@ -26,12 +26,22 @@ console.log(findLongestString(["hello", "mush", "celebration"]))
 
 // find key-value match
   //create function that takes two objects as parameter
-    // check if they share at least one key-value pair
-    // return true if they have key-value pair in common
+    // check if they share common key
+      // if they share common key, check if they have common value
+    // return true if they have at least one key-value pair in common
     // return false if nothing in common
   // return boolean value
 
 function keyValueMatch(object1, object2) {
 
-  var object 1 = ; 
+  var matchingKeyValue = false;
+
+  for (var key in object1) { 
+    if (key in object2) { // if object2 has same key as object1
+      if (object[key] == object2[key]) { // compare values of common key pairs
+        matchingKeyValue = true 
+      } 
+    }
+  }
+  return matchingKeyValue; 
 }
