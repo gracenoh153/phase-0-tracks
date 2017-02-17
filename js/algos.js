@@ -18,13 +18,6 @@ function findLongestString(string) {
   return longestString; 
 }
 
-// DRIVER CODE
-
-// this should return "longest phrase"
-console.log(findLongestString(["long phrase","longest phrase","longer phrase"])); 
-// this should return "celebration"
-console.log(findLongestString(["hello", "mush", "celebration"]));
-
 
 
 // find key-value match
@@ -48,15 +41,6 @@ function keyValueMatch(object1, object2) {
   }
   return matchingKeyValue; 
 }
-
-// DRIVER CODE
-
-// this should return "true"
-console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-// this should return "true"
-console.log(keyValueMatch({name: "Barney", age: 63}, {name: "Barney", age: 35}));
-// this should return "false"
-console.log(keyValueMatch({name: "Barney", height: 63}, {name: "Kensie", weight: 135}));
 
 
 
@@ -97,6 +81,20 @@ function generateRandomWords(integer) {
 }
 
 // DRIVER CODE
+
+// this should return "longest phrase"
+console.log(findLongestString(["long phrase","longest phrase","longer phrase"])); 
+// this should return "celebration"
+console.log(findLongestString(["hello", "mush", "celebration"]));
+
+
+// this should return "true"
+console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+// this should return "true"
+console.log(keyValueMatch({name: "Barney", age: 63}, {name: "Barney", age: 35}));
+// this should return "false"
+console.log(keyValueMatch({name: "Barney", height: 63}, {name: "Kensie", weight: 135}));
+
 
 // this should return array containing three strings of varying length and letters 
 console.log(generateRandomWords(3)); 
