@@ -1,7 +1,7 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: Natalie Yip].
-# We spent [#] hours on this challenge.
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # pulls in a file from anywhere in your computer; 
@@ -52,36 +52,35 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
-    # case statement in Ruby
-=begin 
-    case @population_density
-      when 200.. 
-        speed = 0.5
-      when 150..200
-        speed = 1.0
-      when 100..150
-        speed = 1.5
-      when 50..100
-        speed = 2.0
+
+    # use case statement here 
+    speed = case @population_density
+      when 200..999
+        0.5
+      when 150..199
+        1
+      when 100..149
+        1.5
+      when 50..99
+        2
       else 
-        speed = 2.5
-    end 
-=end 
-     if @population_density >= 200
-       speed += 0.5
-     elsif @population_density >= 150
-       speed += 1
-     elsif @population_density >= 100
-       speed += 1.5
-     elsif @population_density >= 50
-       speed += 2
-     else
-       speed += 2.5
-     end
+        2.5
+      end 
+      speed
 
+     # speed = 0.0
+     # if @population_density >= 200
+     #   speed += 0.5
+     # elsif @population_density >= 150
+     #   speed += 1
+     # elsif @population_density >= 100
+     #   speed += 1.5
+     # elsif @population_density >= 50
+     #   speed += 2
+     # else
+     #   speed += 2.5
+     # end
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
 
 end
@@ -112,4 +111,27 @@ end
 
 #=======================================================================
 # Reflection Section
+=begin 
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  There's no difference in the end result of the two syntaxes. 
+  ":key => value" is the exact same as "key: value" ... Although to my understanding,
+  the latter is the more "modern" way to do it.
 
+# What does require_relative do? How is it different from require?
+  require_relative pulls in a file from anywhere in your computer/specified location; 
+  if no start point specified, looks in the same file you are in currently.
+  require looks within Ruby; otherwise, it starts in C
+
+# What are some ways to iterate through a hash?
+  hash_name.each 
+  hash_name.each_key 
+  hash_name.each_value
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  
+
+# What concept did you most solidify in this challenge?
+  The "private" method was definitely a very interesting one. It's one that I could see being
+  very useful in any number of situations. In addition, the assignment gave a nice reminder/
+  refresher in accessing nested data structures (before the big assessment!).
+=end 
