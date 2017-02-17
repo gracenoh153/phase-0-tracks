@@ -25,7 +25,7 @@ class VirusPredictor
     speed_of_spread
   end
 
-  private # 
+  private # makes everything underneath private; inaccessible to outside objects
 
   # method that predicts deaths based on population density
   def predicted_deaths
@@ -54,17 +54,30 @@ class VirusPredictor
     # by additional factors we haven't added into this functionality.
     speed = 0.0
     # case statement in Ruby
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
+    case @population_density
+      when 200.. 
+        speed = 0.5
+      when 150..200
+        speed = 1.0
+      when 100..150
+        speed = 1.5
+      when 50..100
+        speed = 2.0
+      else 
+        speed = 2.5
+    end 
+
+    # if @population_density >= 200
+    #   speed += 0.5
+    # elsif @population_density >= 150
+    #   speed += 1
+    # elsif @population_density >= 100
+    #   speed += 1.5
+    # elsif @population_density >= 50
+    #   speed += 2
+    # else
+    #   speed += 2.5
+    # end
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
@@ -98,3 +111,4 @@ end
 
 #=======================================================================
 # Reflection Section
+
