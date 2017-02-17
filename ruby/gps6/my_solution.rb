@@ -25,22 +25,24 @@ class VirusPredictor
     speed_of_spread
   end
 
-  private
+  private # 
 
   # method that predicts deaths based on population density
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      multiplier = 0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      multiplier = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      multiplier = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      multiplier = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      multiplier = 0.05 
     end
+
+    number_of_deaths = (@population * multiplier).floor 
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -51,7 +53,7 @@ class VirusPredictor
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
-
+    # case statement in Ruby
     if @population_density >= 200
       speed += 0.5
     elsif @population_density >= 150
