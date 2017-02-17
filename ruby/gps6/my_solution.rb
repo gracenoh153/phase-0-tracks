@@ -1,21 +1,25 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Natalie Yip].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# pulls in a file from anywhere in your computer; 
+# if no start point specified, looks in the same file you are in currently
+# require looks within Ruby; otherwise, it starts in C
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+  # initializes the method with instance variables; has three parameters
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # calling two different methods
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +27,7 @@ class VirusPredictor
 
   private
 
+  # method that predicts deaths based on population density
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +46,7 @@ class VirusPredictor
 
   end
 
+  # method that calculates speed of spread based on population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -69,6 +75,10 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+STATE_DATA.each do |state, data|
+  diff_states = VirusPredictor.new(state, data[:population_density], STATE_DATA[state][:population])
+  diff_states.virus_effects
+end 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
