@@ -37,7 +37,7 @@ function keyValueMatch(object1, object2) {
   var matchingKeyValue = false;
 
   for (var key in object1) { 
-    for (key in object2) { // if object2 has same key as object1
+    if (key in object2) { // if object2 has same key as object1 (interesting.. a for loop seems to work as well)
       if (object1[key] == object2[key]) { // compare values of common key pairs
         matchingKeyValue = true; 
       } 
@@ -51,4 +51,18 @@ function keyValueMatch(object1, object2) {
 console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 console.log(keyValueMatch({name: "Barney", age: 63}, {name: "Barney", age: 35}));
 console.log(keyValueMatch({name: "Barney", height: 63}, {name: "Kensie", weight: 135}));
+
+// generate random test data
+  // create a function that takes an integer as a length
+    // return an array of string of that length
+      // generate random number (for string output)
+      // words must very in length with min 1 letter and max 10 letters
+
+function generateRandomWords(integer) {
+
+  var randomWordArray = [];
+  var alphabet = "abcdefghijklmnopqrstuvwxyz"
+}
+
+
 
