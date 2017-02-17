@@ -20,8 +20,8 @@ function findLongestString(string) {
 
 // DRIVER CODE
 
-console.log(findLongestString(["long phrase","longest phrase","longer phrase"]))
-console.log(findLongestString(["hello", "mush", "celebration"]))
+console.log(findLongestString(["long phrase","longest phrase","longer phrase"]));
+console.log(findLongestString(["hello", "mush", "celebration"]));
 
 
 // find key-value match
@@ -37,11 +37,18 @@ function keyValueMatch(object1, object2) {
   var matchingKeyValue = false;
 
   for (var key in object1) { 
-    if (key in object2) { // if object2 has same key as object1
-      if (object[key] == object2[key]) { // compare values of common key pairs
-        matchingKeyValue = true 
+    for (key in object2) { // if object2 has same key as object1
+      if (object1[key] == object2[key]) { // compare values of common key pairs
+        matchingKeyValue = true; 
       } 
     }
   }
   return matchingKeyValue; 
 }
+
+// DRIVER CODE
+
+console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(keyValueMatch({name: "Barney", age: 63}, {name: "Barney", age: 35}));
+console.log(keyValueMatch({name: "Barney", height: 63}, {name: "Kensie", weight: 135}));
+
