@@ -96,4 +96,9 @@ function generateRandomWords(integer) {
   return randomWordArray; 
 }
 
+// DRIVER CODE
 
+// this should return array containing three strings of varying length and letters 
+console.log(generateRandomWords(3)); 
+// this should return array containing 10 strings of varying length and letters 
+console.log(generateRandomWords(10));
