@@ -90,7 +90,7 @@ SELECT * FROM characters RIGHT JOIN universe ON characters.id = universe.id;
 output: 
 Error: RIGHT and FULL OUTER JOINs are not currently supported
 
-4. full join 
+4. full join - returns all rows from table 1 and table 2
 
 command:
 SELECT * FROM characters FULL JOIN universe ON characters.id = universe.id;
