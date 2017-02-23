@@ -55,6 +55,45 @@ MARVEL|Captain America|1941|true
 command: 
 DELETE FROM characters WHERE year_introduced = 1964;
 
+-----------------------------------------------------------------------------
+
 ** Release 3: Research on Your Own **
 
-1. 
+1. inner join - return rows when there is at least one match in BOTH tables
+
+command:
+SELECT * FROM characters INNER JOIN universe ON characters.id = universe.id;
+
+output: 
+1|the Batman|1939|true|1|1|DC Comics|Malcom Wheeler-Nicholson
+2|Joker|1940|false|1|2|MARVEL|Martin Goodman
+
+2. left join - return all rows from left table, and matched row from right table
+
+command: 
+SELECT * FROM characters LEFT JOIN universe ON characters.name = universe.founder;
+
+output: 
+1|the Batman|1939|true|1|||
+2|Joker|1940|false|1|||
+3|Hulk|1962|true|2|||
+4|Wonder Woman|1941|true|1|||
+6|Spider Man|1962|true|2|||
+7|Harley Quinn|1993|false|1|||
+8|Captain America|1941|true|2|||
+
+3. right join - return all rows from right table, and matched rows from left table
+
+command:
+SELECT * FROM characters RIGHT JOIN universe ON characters.id = universe.id;
+
+output: 
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+4. full join 
+
+command:
+SELECT * FROM characters FULL JOIN universe ON characters.id = universe.id;
+
+output:
+Error: RIGHT and FULL OUTER JOINs are not currently supported
