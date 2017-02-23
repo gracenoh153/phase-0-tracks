@@ -26,14 +26,14 @@ command:
 SELECT * FROM characters, universe WHERE characters.universe_id = universe.id;
 
 output: 
-1|the Batman|1939|true|1|1|DC Comics
-2|Joker|1940|false|1|1|DC Comics
-3|Hulk|1962|true|2|2|MARVEL
-4|Wonder Woman|1941|true|1|1|DC Comics
-5|Green Goblin|1964|false|2|2|MARVEL
-6|Spider Man|1962|true|2|2|MARVEL
-7|Harley Quinn|1993|false|1|1|DC Comics
-8|Captain America|1941|true|2|2|MARVEL
+1|the Batman|1939|true|1|1|DC Comics|Malcom Wheeler-Nicholson
+2|Joker|1940|false|1|1|DC Comics|Malcom Wheeler-Nicholson
+3|Hulk|1962|true|2|2|MARVEL|Martin Goodman
+4|Wonder Woman|1941|true|1|1|DC Comics|Malcom Wheeler-Nicholson
+5|Green Goblin|1964|false|2|2|MARVEL|Martin Goodman
+6|Spider Man|1962|true|2|2|MARVEL|Martin Goodman
+7|Harley Quinn|1993|false|1|1|DC Comics|Malcom Wheeler-Nicholson
+8|Captain America|1941|true|2|2|MARVEL|Martin Goodman
 
 4. Display a narrower selection of columns (fewer columns than all of them) from both tables using one query:
 
