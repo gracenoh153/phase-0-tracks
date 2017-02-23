@@ -38,7 +38,7 @@ output:
 4. Display a narrower selection of columns (fewer columns than all of them) from both tables using one query:
 
 command: 
-SELECT universe.name, characters.name, characters.year_introduced, characters.good FROM universe JOIN characters ON characters.universe_id = universe.id;
+SELECT universe.universe_name, characters.name, characters.year_introduced, characters.good FROM universe JOIN characters ON characters.universe_id = universe.id;
 
 output:
 DC Comics|the Batman|1939|true
@@ -55,4 +55,6 @@ MARVEL|Captain America|1941|true
 command: 
 DELETE FROM characters WHERE year_introduced = 1964;
 
+** Release 3: Research on Your Own **
 
+1. 
