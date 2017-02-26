@@ -23,3 +23,24 @@ create_customers_table = <<-SQL
     last_name VARCHAR(255)
   )
 SQL
+
+# create a customers table (if it hasn't been made already)
+db.execute(create_customers_table)
+
+# add test customer
+# db.execute("INSERT INTO customers (first_name, last_name) VALUES ("Grace", "Noh")")
+
+# create table for car brands
+create_car_brand_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS car_brand(
+    id INTEGER PRIMARY KEY
+    brand_name VARCHAR(255)
+  )
+SQL
+
+# create a table for car brands if it doesn't already exist
+db.execute(create_car_brand_table)
+
+# add test brand 
+# db.execute("INSERT INTO car_brand (brand_name) VALUES ("Hyundai")")
+
