@@ -35,3 +35,5 @@ create_items_table = <<-SQL
   )
 SQL
 
+grocery_list.execute(create_items_table)
+
