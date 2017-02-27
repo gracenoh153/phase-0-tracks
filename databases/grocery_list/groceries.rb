@@ -83,7 +83,9 @@ end
 # USER INTERFACE
 puts "Welcome to the grocery list maker!"
 puts "Choose one of the following options:"
+
   loop do 
+
     puts "1 - Create a new grocery list"
     puts "2 - View your list"
     puts "'q' - Quit"
@@ -109,6 +111,7 @@ puts "Choose one of the following options:"
       puts "-" * 20 
       print_items(grocery_list)
     end 
+
   end 
 
 =begin 
