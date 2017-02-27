@@ -46,13 +46,19 @@ SQL
 grocery_list.execute(create_items_table)
 
 # manipulate stores table
-def add_stores()
+def add_stores(grocery_list, name)
+  grocery_list.execute("INSERT INTO stores (name) VALUES (?)", [name])
 end 
 
-def delete_stores()
+def delete_stores(grocery_list, id_number)
+  grocery_list.execute("DELETE FROM stores WHERE id = #{id_number}")
 end 
 
-def print_stores()
+def print_stores(grocery_list, store)
+  store_list = grocery_list.execute("SELECT * FROM stores")
+  store_list.each do |store|
+    puts "#{store[id]} - #{stores['name']}"
+  end 
 end 
 
 # manipulate items table
