@@ -33,6 +33,7 @@ create_items_table = <<-SQL
   CREATE TABLE IF NOT EXISTS items(
     id INTEGER PRIMARY KEY,
     item VARCHAR(255),
+    type VARCHAR(255),
     quantity INT,
     perishable BOOLEAN,
     user_id INT,
@@ -44,7 +45,6 @@ SQL
 
 grocery_list.execute(create_items_table)
 
-
 # manipulate stores table
 def add_stores()
 end 
@@ -52,17 +52,23 @@ end
 def delete_stores()
 end 
 
-def print_users()
+def print_stores()
 end 
 
 # manipulate items table
-def add_items()
+def add_items(grocery_list, item, type, quantity, persishable)
+  grocery_list.execute("INSERT INTO items (item, type, quantity, perishable) VALUES (?, ?, ?)", [item, type, quantity, "false"])
 end 
 
-def delete_stores()
+def delete_items(grocery_list, id_number)
+  grocery_list.execute("DELETE FROM items WHERE id = #{id_number}")
 end 
 
-def print_users()
+def print_items(grocery_list)
+  item_list = grocery_list.execute("SELECT * FROM items")
+  item_list.each do |item|
+    puts "#{item[id]} - item: #{items['item']}, type: #{items['type']}, quantity: #{items['quantity']}, perishable: #{items['perishable']}" 
+  end 
 end
 
 # USER INTERFACE
@@ -70,15 +76,12 @@ puts "Welcome to the grocery list maker!"
 puts "Choose one of the following options:"
 loop do 
   puts "1 - Create a new grocery list"
-  puts "2 - Modify list of users"
-  puts "3 - Modify list of stores"
-  puts "4 - Modify list of items"
-  puts "5 - View your list"
+  puts "2 - Modify list of stores"
+  puts "3 - Modify list of items"
+  puts "4 - View your list"
   puts "'q' - Quit"
   user_choice = gets.chomp 
-  if user_choice != 1 || user_choice != 2 || user_choice != 3 || user_choice != 4 || user_choice != 5 || user_choice != "q"
-    puts "Please enter a valid choice."
-    user_choice = gets.chomp
-  end 
   break if user_choice == "q"
 end 
+
+
