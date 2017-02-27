@@ -70,6 +70,8 @@ def delete_items(grocery_list, id_number)
   grocery_list.execute("DELETE FROM items WHERE id = #{id_number}")
 end 
 
+# def update_items(grocery_list)
+
 def print_items(grocery_list)
   item_list = grocery_list.execute("SELECT * FROM items")
   item_list.each do |item|
@@ -87,7 +89,31 @@ loop do
   puts "4 - View your list"
   puts "'q' - Quit"
   user_choice = gets.chomp 
+
   break if user_choice == "q"
+
+  if user_choice == "1"
+    puts "Creating a new grocery list."
+    puts "What is the item you would like to purchase?"
+    item = gets.chomp
+    puts "What type of item is it? (e.g. food, toiletries, hardware, gardening, etc...."
+    type = gets.chomp
+    puts "Enter the quantity you would like to buy."
+    quantity = gets.chomp
+    puts "Is the item perishable? Enter 'yes' or 'no'."
+    is_persishable = gets.chomp
+      if is_persishable == 'yes'
+        persishable = true
+      else 
+        persishable = false
+      end 
+    puts "Here is the information you just entered:"
+    print_items(grocery_list)
+
+  elsif user_choice == "2" 
+  end 
+
+
 end 
 
 
