@@ -18,7 +18,7 @@ Release 1, question 2
 
 (the information above provided by: https://opensource.com/business/15/2/how-linux-philosophy-affects-you)
 
-Release 1, question 2
+Release 1, question 3
 ** What is a VPS, and what are its advantages? **
     * A VPS is a "computer", without the hardware. It can store memory, and operates as its own being, with its own files. Basically, a virtual version of a physical computer. It also allows the user to access the virtual server from their own local machine, changing and accessing the files as they see fit.
     * Advantages include:
@@ -30,3 +30,7 @@ Release 1, question 2
         - can choose to have a hosting service where the web host has partial control over maintenance and other services 
 
 (the information above provided by: http://www.webhostinghub.com/web-hosting-guide/the-pros-and-cons-of-vps-web-hosting)
+
+Release 1, optional question 4
+** Why is it a bad idea to run programs as the root user on a Linux system? **
+    * Running programs as the root user on Linux is the same as running programs as the Administrator on Windows. However, it's actually worse. You can do a lot of damage using root, because it gives you control over pretty much anything in the system. Whatever you tell it to do, it will do. Therefore, if you were to give a wrong command, the system would carry it out anyway. In addition, it would open your system to security issues. When logged in as root, any flaws in security will automatically have access to your entire system. 
