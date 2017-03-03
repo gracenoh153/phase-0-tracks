@@ -18,10 +18,9 @@ function addGreenBorder(event) {
   event.target.style.border = "5px solid green";
 }
 
-
 var image = document.getElementById("Shih-Poo");
 image.addEventListener("click", addBlueBorder);
 
 var button = document.getElementsByTagName("button");
 button[0].addEventListener("click", addPinkBorder);
-button[1].addEventListener("click", addGreenBorder);
+button[1].addEventListener("mouseover", addGreenBorder);
