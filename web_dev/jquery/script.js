@@ -10,10 +10,8 @@ $(document).ready(function() {
     $("#Badook").css("border", "10px dotted blue");
   });
 
-  $("")
-
-
-
-
+  $("#best").click(function() {
+    $("#best").css("border", "3px solid green");
+  });
 
 });
