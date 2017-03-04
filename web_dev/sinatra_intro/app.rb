@@ -50,4 +50,12 @@ get '/contact' do
   Magnolias, HP 39487-2337<br>"
 end 
 
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else 
+    "Good job!"
+  end 
+end
 
