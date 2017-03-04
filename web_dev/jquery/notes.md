@@ -1,4 +1,5 @@
 ** RELEASE 0: Make a plan to learn jQuery **
+    * use textbook (John Duckett) and w3schools.com
     * look up the following:
         - HTML/DOM manipulation
         - CSS manipulation
