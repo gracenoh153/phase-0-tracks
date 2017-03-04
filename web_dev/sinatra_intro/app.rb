@@ -45,3 +45,9 @@ get '/students/:id' do
   student.to_s
 end
 
+get '/contact' do
+  "12123 Wizarding Lane<br>
+  Magnolias, HP 39487-2337<br>"
+end 
+
+
